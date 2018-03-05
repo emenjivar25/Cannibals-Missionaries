@@ -1,7 +1,5 @@
 #! usr/bin/env python3.5
 
-from collections import deque
-
 gMISSIONARIES = 3
 gCANNIBALS = 3
 gBOATSIZE = 2
@@ -139,14 +137,6 @@ class Node(object):
         for p in path:
             print(p)
             print()
-
-    def __hash__(self):
-        return hash((self.state.lMissionary, self.state.rMissionary, self.state.rCannibal, self.state.lCannibal, self.state.boat))
-
-    """def __eq__(self, other):
-        return self.state.lCannibal == other.state.lCannibal and self.state.rCannibal == other.state.rCannibal \
-            and self.state.rMissionary == other.state.rMissionary and self.state.lMissionary == other.state.lMissionary \
-            and self.state.boat == other.state.boat"""
 
 
 #Breadth first search
