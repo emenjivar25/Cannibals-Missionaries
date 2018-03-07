@@ -1,5 +1,8 @@
 #! usr/bin/env python3.5
+"""
+BFS For cannibals / missionaries. A little long for one file but I didn't feel like breaking it up 
 
+"""
 gMISSIONARIES = 3
 gCANNIBALS = 3
 gBOATSIZE = 2
@@ -30,14 +33,15 @@ class State (object):
 
         #need to have missionaries >= cannibals on a given side
         if(self.rCannibal > self.rMissionary and self.rMissionary > 0):
-            return False
+            returna
+CC False
 
         if(self.lCannibal > self.lMissionary and self.lMissionary > 0):
             return False
 
         return True
 
-
+#for printing output
     def __str__(self):
         list = []
         list.append('C' * self.lCannibal)
@@ -59,7 +63,7 @@ class Node(object):
         self.state = state
         self.parent = parent
 
-
+#Expand a node to all possible moves
     def getNeighbors(self):
         retList = []
         if self.state.boat == 'r':
@@ -126,7 +130,8 @@ class Node(object):
                 retList.append(newNode)
 
         return retList
-
+    
+#find path taken to goal node, order it correctly
     def rollback(self):
         path = []
         pNode = self
