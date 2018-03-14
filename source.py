@@ -33,8 +33,7 @@ class State (object):
 
         #need to have missionaries >= cannibals on a given side
         if(self.rCannibal > self.rMissionary and self.rMissionary > 0):
-            returna
-CC False
+            return False
 
         if(self.lCannibal > self.lMissionary and self.lMissionary > 0):
             return False
